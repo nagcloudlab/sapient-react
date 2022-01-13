@@ -90,7 +90,7 @@ file-names          ==> pascal-case,lower-case , data-types.js
 
 
 ------------------------------------------------------------------
-//  core javascript : level-1 topics
+core javascript : level-1 topics
 ------------------------------------------------------------------
 
  => basic data types
@@ -101,7 +101,7 @@ file-names          ==> pascal-case,lower-case , data-types.js
  => data structures ( list/array , set ( es6 )  , map ( es6 ))
  
 ------------------------------------------------------------------
-//  javascript : level-2 topics
+javascript : level-2 topics
 ------------------------------------------------------------------
 
 => Es6 New-syntax & New APIs 

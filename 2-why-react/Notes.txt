@@ -1,0 +1,16 @@
+
+------------------------------------------------------------------------------------
+why react.js
+------------------------------------------------------------------------------------
+
+to build web-UI
+
+reason-1 : uses component-based arch
+
+            => we build complex user-interfaces with simple elements
+
+reason-2 : rendering on virtual-dom ( in-memory DOM )
+
+            => minimiza changes to actual-DOM , leads browser performance
+
+------------------------------------------------------------------------------------

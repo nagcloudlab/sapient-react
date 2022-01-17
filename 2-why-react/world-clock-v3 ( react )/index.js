@@ -17,6 +17,7 @@ const clocl3Ele = document.getElementById('clock-3')
 // principle#3 : customizable via props / input / attributes ( optional )
 
 // JSX ( JavaScript eXtension => template syntax for components)
+
 function Clock(props) {
     const { timeZone } = props
     return (

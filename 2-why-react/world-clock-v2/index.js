@@ -7,7 +7,6 @@ const clocl1Ele = document.getElementById('clock-1')
 const clocl2Ele = document.getElementById('clock-2')
 const clocl3Ele = document.getElementById('clock-3')
 
-
 // ------------------------------------------------
 // UI with component based arch
 // ------------------------------------------------

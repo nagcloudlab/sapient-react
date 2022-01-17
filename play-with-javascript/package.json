@@ -1,0 +1,23 @@
+{
+  "name": "play-with-javascript",
+  "version": "1.0.0",
+  "description": "https://github.com/nagcloudlab/ui-batch/tree/main/Stage-1/1-Javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "webpack-dev-server": "^4.7.3"
+  }
+}

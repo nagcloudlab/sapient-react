@@ -1,37 +1,5 @@
 
-
-
-// --------------------------------------------
-// 1- data model
-// --------------------------------------------
-
-// todo  = {id:number,title:string,completed:boolean}
-
-/*
-
-let nextId = 0
-function Todo(title) {
-    nextId++;
-    this.id = nextId
-    this.title = title
-    this.completed = false
-}
-
-*/
-
-// - or -
-
-class Todo {
-    static nextId = 0;
-    constructor(title) {
-        Todo.nextId++
-        this.id = Todo.nextId
-        this.title = title
-        this.completed = false
-    }
-}
-
-
+import Todo from './todo'
 
 //--------------------------------------------------------------------
 // 2- Service
@@ -39,7 +7,7 @@ class Todo {
 
 
 //--------------------------------------------------------------------
-// Mutable operations
+// 1-Mutable operations
 //--------------------------------------------------------------------
 
 class TodoService_v1 {
@@ -99,7 +67,7 @@ class TodoService_v1 {
 
 
 //--------------------------------------------------------------------
-// Immutable operations
+// 2-Immutable operations
 //--------------------------------------------------------------------
 
 const TODO_FILTERS = {
@@ -163,63 +131,5 @@ class TodoService_v2 {
     }
 }
 
-const todoService = new TodoService_v2();
-todoService.addTodo("todo-1")
-todoService.addTodo("todo-2")
-todoService.completeTodo(1)
-
-
-// --------------------------------------------------------------
-// View
-// --------------------------------------------------------------
-
-// using DOM API
-
-const newTodoInpField = document.getElementById('new-todo')
-const todoListEle = document.getElementById('todo-list')
-
-
-newTodoInpField.addEventListener('keyup', e => {
-    if (e.code !== "Enter") return
-    let title = e.target.value.trim()
-    if (!title) return
-    todoService.addTodo(title)
-    e.target.value = ""
-    renderTodos(todoService.getTodos('ALL')) //re-rendering
-})
-
-todoListEle.addEventListener('click', e => {
-    const { action, id } = e.target.dataset
-    if (action === "del") {
-        todoService.deleteTodo(Number.parseInt(id))
-    }
-    if (action === "cmp") {
-        todoService.completeTodo(Number.parseInt(id))
-    }
-    renderTodos(todoService.getTodos("ALL"))
-})
-
-function renderTodos(todos = []) {
-    if (todos.length === 0) {
-        todoListEle.innerHTML = `
-        <li class="list-group-item">
-            <div>No Todos</div>
-        </li>
-        `
-    } else {
-        const liElements = todos.map(todo => {
-            return `
-        <li class="list-group-item ${todo.completed ? 'bg-success' : ''}" >
-            <div class="d-flex justify-content-between">
-                <input ${todo.completed ? 'checked' : ''} data-action="cmp" data-id="${todo.id}" type="checkbox" />
-                <span>${todo.title}</span>
-                <button data-action="del" data-id="${todo.id}" class="btn btn-sm btn-danger">delete</button>
-            </div>
-        </li>
-        `
-        })
-        todoListEle.innerHTML = liElements.join(" ")
-    }
-}
-
-renderTodos(todoService.getTodos('ALL')) // intial rendering
+export { TodoService_v1 }
+export default TodoService_v2;

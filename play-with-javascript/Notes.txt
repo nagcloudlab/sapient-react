@@ -45,3 +45,98 @@ using XHR/Fetch API
     -> can send HTTP-request async to api-server
 
 
+
+------------------------------------------------------------------------------------
+
+
+core topics , to be fornt-end developer,
+
+    => HTML + CSS + javascript + browser APIs ( DOM , XHR/Fetch )
+
+
+
+
+
+------------------------------------------------------------------------------
+complexities while using plain-javascript ( i.e your code ) with browser apis
+------------------------------------------------------------------------------
+
+
+=> browser compataibility issues ( reference:  http://caniuse.com )
+=> performance issues shoud care manually ( by keeping minimal by DOM access )
+=> memory issues shoud care manually      ( remove un-used DOM elements from memory )
+=> code organization  is bad
+=> data-binding is manual / difficult
+=> too much code even for simple web-sites
+
+
+
+
+------------------------------------
+legacy/old solution:
+------------------------------------
+
+
+    => use server-side page rendering technologies
+
+        e.g JSP,ASP,PHP,........
+
+
+
+    limitations with server-side-page technologies:
+
+        => on every request, server should re-construct same page with new content,
+           by keeping client's state    
+        => on every request, server transfering page with same css,js,images,fonts,...
+           leads to n/w b/w issue
+        => on every page response, browser re-loads current page with new-page
+
+
+
+-------------------------------------------------------------
+modern solutions using client-side(browser) page technologies:
+--------------------------------------------------------------
+
+
+
+how ?
+
+
+    => browsers improved lot, + .js language improved lot by syntax ( ES6 ) , apis ( HTML5 APIs )
+
+       +
+
+    => using third-party's javascript's Lib & Frameworks      
+
+    
+
+--------------------------------------------------------------
+
+
+   DOM + XHR utility lib
+  ----------------------------
+
+    => jQuery
+
+    
+  
+    MVC ( Model View Controller ) arch based javascript lib & F.W
+    --------------------------------------------------------
+
+
+    -> backbone.js
+    -> knockout.js
+    -> Ember.js
+    -> dojo
+    -> ext.js from sencha ( commercial )    
+    -> Angular.js from google
+
+
+    Component arch basesed javascript lib & F.W
+    --------------------------------------------------
+
+    -> React.js from facebook  ( Our subject )
+    -> Angular from google
+    -> Vue.js
+
+    ----------------------------------------------------------------------

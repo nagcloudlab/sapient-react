@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 
 <body>
@@ -14,34 +13,46 @@
         <hr />
         <h1>todo app</h1>
         <hr />
-        <div class="alert alert-danger">
+        <div class="alert alert-dark">
             <div class="d-flex justify-content-center">
                 <input id="new-todo" class="input lg" />
             </div>
         </div>
+        <hr />
+        <div class="d-flex justify-content-around">
+            <button id="todo-limit-5" class="btn btn-sm btn-dark">Load Top-5</button>
+            <select id="todo-limit-list" class="">
+                <option>5</option>
+                <option>15</option>
+                <option>50</option>
+                <option>100</option>
+                <option>200</option>
+            </select>
+            <input id="todo-limit-inp" size="3" />
+        </div>
+        <hr />
         <ul id="todo-list" class="list-group">
         </ul>
         <hr />
         <div class="d-flex justify-content-between">
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">All</a>
+                    <a id="filter-all" class="nav-link" href="#">All</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Active</a>
+                    <a id="filter-active" class="nav-link" href="#">Active</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled">Completed</a>
+                    <a id="filter-completed" class="nav-link" href="#">Completed</a>
                 </li>
             </ul>
-            <button class="btn btn-link">Clear Completed</button>
+            <button id="clear-completed" class="btn btn-link">Clear Completed</button>
         </div>
         <hr />
 
     </div>
 
 
-    <script src="./index.js"></script>
 </body>
 
 </html>

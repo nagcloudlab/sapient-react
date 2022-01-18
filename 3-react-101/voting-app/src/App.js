@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import Parent from './Parent';
 import VotingBox from './VotingBox';
 
 class App extends Component {

@@ -11,9 +11,7 @@ class App extends Component {
         <h1>Thinking in React</h1>
         <hr />
 
-        {/* <VotingBox /> */}
-
-        <Parent />
+        <VotingBox />
 
       </div>
     );

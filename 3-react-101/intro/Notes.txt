@@ -17,14 +17,46 @@ how to create component(s) using react.js ?
 
 
 --------------------------------------------------------------
-how to customize react-components?
+props/ attributes
+--------------------------------------------------------------
 
-    -> using props/attributes
+    => to customize react-components
+
 
     <input type="password" name="pword"/>
     <App title="react-intro"/>
 
     imp-note :
 
-    by default, all props are immutable, 
-    i.e component cannot change given properties
+        by default, all props are immutable, 
+        i.e component cannot change given properties
+
+
+    props => any data that comes to the component from parent/outside
+
+---------------------------------------------------------------------    
+
+---------------------------------------------------------------------    
+state
+---------------------------------------------------------------------    
+
+    2 types of component
+    ---------------------
+
+    - stateless component
+    - stateful component
+
+
+    => component's internal data
+    => state is mutable
+    => on event, when we state mutate, component always re-render
+
+-----------------------------------------------------------------------
+
+
+How to handle events?
+
+<element onXXX={fn}/>
+
+-----------------------------------------------------------------------
+

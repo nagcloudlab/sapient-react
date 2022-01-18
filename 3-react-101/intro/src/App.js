@@ -7,18 +7,23 @@ import React, { Component } from 'react'
  */
 class App extends Component {
 
+  state = {
+    message: "greetings"
+  }
+
   constructor(props) {
     super()
     console.log("App::constructor()");
-    //console.log(props);
+  }
+
+  handleEvent(e, message) {
+    this.setState({ message })
   }
 
   render() {
     console.log("App::render()");
-    // let title = this.props.title
-    // let trainer = this.props.trainer
-    // - or -
     let { title, trainer } = this.props
+    let { message } = this.state
     return (
       <div className='container'>
         <hr />
@@ -27,6 +32,15 @@ class App extends Component {
           <small className='h6'>by {trainer}</small>
         </h1>
         <hr />
+        <div className='d-flex justify-content-around'>
+          <button onClick={e => this.handleEvent(e, "good morning")} className='btn btn-dark'>GM</button>
+          <button onClick={e => this.handleEvent(e, "good noon")} className='btn btn-dark'>GN</button>
+          <button onClick={e => this.handleEvent(e, "good evening")} className='btn btn-dark'>GE</button>
+        </div>
+        <hr />
+        <div className='alert alert-info'>
+          {message}
+        </div>
       </div>
     )
   }

@@ -2,6 +2,7 @@
 
 --------------------------------------------------------------
 what is component ?
+--------------------------------------------------------------
 
     => UI fragment 
 
@@ -15,24 +16,16 @@ how to create component(s) using react.js ?
     - class-syntax
     - function-syntax
 
-
 --------------------------------------------------------------
-props/ attributes
+props/attributes
 --------------------------------------------------------------
-
-    => to customize react-components
-
 
     <input type="password" name="pword"/>
     <App title="react-intro"/>
 
     imp-note :
-
-        by default, all props are immutable, 
-        i.e component cannot change given properties
-
-
-    props => any data that comes to the component from parent/outside
+        => to customize react-components with external data
+        => by default, all props are immutable, i.e component cannot change given properties
 
 ---------------------------------------------------------------------    
 
@@ -40,27 +33,31 @@ props/ attributes
 state
 ---------------------------------------------------------------------    
 
-    2 types of component
-    ---------------------
-
     - stateless component
     - stateful component
 
-
-    => component's internal data
+    => component's internal data, to represent UI
     => state is mutable
-    => on event, when we state mutate, component always re-render
+    => on event, when we mutate state, component always re-render on vritual-DOM
 
 -----------------------------------------------------------------------
 
-
 How to handle events?
 
-<element onXXX={fn}/>
+    <element onXXX={fn}/>
+
+    <button onClick={e=>{}}/>
+    <Cartoon onFight={e=>{}}/>
 
 -----------------------------------------------------------------------
 
 Parent & Child components
 
-    
+    => parent ===> child(s) ===> via props
+    => child  ===> parents  ===> via events i.e invoking given function  
 
+------------------------------------------------------------------------
+
+https://reactjs.org/docs/thinking-in-react.html
+
+--------------------------------------------------------------------------

@@ -1,0 +1,30 @@
+
+
+--------------------------------------------------------------
+what is component ?
+
+    => UI fragment 
+
+        e.g board,clock
+
+--------------------------------------------------------------
+how to create component(s) using react.js ?
+
+ 2-ways
+
+    - class-syntax
+    - function-syntax
+
+
+--------------------------------------------------------------
+how to customize react-components?
+
+    -> using props/attributes
+
+    <input type="password" name="pword"/>
+    <App title="react-intro"/>
+
+    imp-note :
+
+    by default, all props are immutable, 
+    i.e component cannot change given properties

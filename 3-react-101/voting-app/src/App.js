@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import Parent from './Parent';
 import VotingBox from './VotingBox';
 
 class App extends Component {
@@ -10,7 +11,9 @@ class App extends Component {
         <h1>Thinking in React</h1>
         <hr />
 
-        <VotingBox />
+        {/* <VotingBox /> */}
+
+        <Parent />
 
       </div>
     );

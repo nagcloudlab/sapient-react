@@ -6,13 +6,14 @@ import Greet from './Greet';
 // stateful
 class App extends Component {
 
-  state = {
-    message: "greetings"
-  }
   constructor(props) {
     super()
     console.log("App::constructor()");
+    this.state = {
+      message: "greetings"
+    }
   }
+
   handleEvent(e, message) {
     this.setState({ message })
   }
@@ -30,12 +31,13 @@ class App extends Component {
           </h1>
           <hr />
           <div className='d-flex justify-content-around'>
-            <button onClick={e => this.handleEvent(e, "good morning")} className='btn btn-dark'>GM</button>
-            <button onClick={e => this.handleEvent(e, "good noon")} className='btn btn-dark'>GN</button>
-            <button onClick={e => this.handleEvent(e, "good evening")} className='btn btn-dark'>GE</button>
+            <button onClick={e => this.handleEvent(e, "hello")} className='btn btn-dark'>Hello</button>
+            <button onClick={e => this.handleEvent(e, "hi")} className='btn btn-dark'>Hi</button>
+            <button onClick={e => this.handleEvent(e, "hey")} className='btn btn-dark'>Hey</button>
+            <button onClick={e => this.handleEvent(e, "")} className='btn btn-danger'>Remove Greet component</button>
           </div>
           <hr />
-          <Greet message={message} />
+          {message ? <Greet message={message} /> : null}
         </div>
       </div>
     )

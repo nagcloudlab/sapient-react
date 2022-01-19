@@ -1,7 +1,5 @@
-
-
 --------------------------------------------------------------
-what is component ?
+1- what is component ?
 --------------------------------------------------------------
 
     => UI fragment 
@@ -9,15 +7,14 @@ what is component ?
         e.g board,clock
 
 --------------------------------------------------------------
-how to create component(s) using react.js ?
-
- 2-ways
+2- how to create component(s) using react.js ?
+--------------------------------------------------------------
 
     - class-syntax
     - function-syntax
 
 --------------------------------------------------------------
-props/attributes
+3- props/attributes
 --------------------------------------------------------------
 
     <input type="password" name="pword"/>
@@ -30,7 +27,7 @@ props/attributes
 ---------------------------------------------------------------------    
 
 ---------------------------------------------------------------------    
-state
+4- state
 ---------------------------------------------------------------------    
 
     - stateless component
@@ -41,8 +38,8 @@ state
     => on event, when we mutate state, component always re-render on vritual-DOM
 
 -----------------------------------------------------------------------
-
-How to handle events?
+5- How to handle events?
+-----------------------------------------------------------------------
 
     <element onXXX={fn}/>
 
@@ -50,8 +47,8 @@ How to handle events?
     <Cartoon onFight={e=>{}}/>
 
 -----------------------------------------------------------------------
-
-Parent & Child components
+6- Parent & Child components
+-----------------------------------------------------------------------
 
     => parent ===> child(s) ===> via props
     => child  ===> parents  ===> via events i.e invoking given function  
@@ -61,3 +58,14 @@ Parent & Child components
 https://reactjs.org/docs/thinking-in-react.html
 
 --------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
+6- react component's Lifecycle
+-----------------------------------------------------------------------
+
+
+    - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+    
+    

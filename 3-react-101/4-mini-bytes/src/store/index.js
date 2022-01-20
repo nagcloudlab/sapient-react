@@ -16,14 +16,13 @@ const store = {
             ],
             tracks: {
                 'playlist-1': [
-                    "track-1",
-                    "track-2",
-                    "track-3"
+                    { id: 11, title: 'track-11', duration: 4 },
+                    { id: 22, title: 'track-22', duration: 5 },
                 ],
                 'playlist-2': [
-                    "track-11",
-                    "track-22",
-                    "track-33"
+                    { id: 1, title: 'track-1', duration: 4 },
+                    { id: 2, title: 'track-2', duration: 5 },
+                    { id: 3, title: 'track-3', duration: 3 }
                 ]
             }
         }

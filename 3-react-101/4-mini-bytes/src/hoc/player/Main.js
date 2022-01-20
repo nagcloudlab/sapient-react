@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Playlist from './Playlist';
+import Tracks from './Tracks';
 
 class Main extends Component {
     constructor() {
@@ -22,6 +23,11 @@ class Main extends Component {
                         <Playlist
                             selectedPlaylist={selectedPlaylist}
                             onSelect={item => this.handlePlaylistChange(item)} />
+                    </div>
+                    <div className='col-8'>
+                        <Tracks
+                            selectedPlaylist={selectedPlaylist}
+                        />
                     </div>
                 </div>
             </div>

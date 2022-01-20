@@ -1,5 +1,5 @@
-
-import Main from './player/Main';
+import UserProfile from "./hoc/UserProfile";
+import CourseDetails from './hoc/CourseDetails';
 
 function App() {
   return (
@@ -8,7 +8,12 @@ function App() {
       <h1>React - Mini-Bytes</h1>
       <hr />
 
-      <Main />
+
+      <UserProfile />
+      <br />
+      <CourseDetails />
+
+
 
     </div>
   );

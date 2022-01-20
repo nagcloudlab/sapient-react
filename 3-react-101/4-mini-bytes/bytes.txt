@@ -1,0 +1,16 @@
+
+
+
+
+    byte-1: children property 
+    byte-2: 'key' property
+    byte-3: conditional rendering 
+    byte-4: context
+    byte-5: error-handling
+    byte-6: fragments
+    byte-7: forms, Ref, DOM
+
+pattern(s)
+-----------------
+
+    byte-8: higher-order-components ( hoc ) 

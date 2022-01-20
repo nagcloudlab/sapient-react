@@ -1,6 +1,5 @@
-import Byte7 from "./byte7/Byte7";
 
-
+import Main from './player/Main';
 
 function App() {
   return (
@@ -9,7 +8,7 @@ function App() {
       <h1>React - Mini-Bytes</h1>
       <hr />
 
-      <Byte7 />
+      <Main />
 
     </div>
   );

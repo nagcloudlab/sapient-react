@@ -16,6 +16,21 @@ how to create new react-application?
 
         e.g board,clock
 
+
+    UI-component principles
+    -----------------------------
+
+    #1. Must have single-responsibility 
+    #2. Must be loosely coupled from other  
+    #3. Should be customizable via props/attributes
+    #4. Can be stateless or stateful
+    #5. On state change, always re-render
+    #6. Communication between components 
+        parent -> child ( via props )
+        child -> parent ( event / function-call )
+
+
+
 --------------------------------------------------------------
 2- how to create component(s) using react.js ?
 --------------------------------------------------------------
@@ -84,28 +99,20 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 -----------------------------------------------------------------------
 
 
-    byte-1: children property 
-    byte-2: 'key' property
-    byte-3: conditional rendering 
-    byte-4: context
-    byte-5: error-handling
-    byte-6: fragments
-    byte-7: forms, Ref, DOM
-
 
 
 -----------------------------------------------------------------------
-6- react design patterns
+7- react design patterns
 ---------------------------------------------------------------------    
 
 
-    - hoc
+    - hoc ( higher-order-componets)
     - render-props
 
 
 
 -----------------------------------------------------------------------
-6- react hooks , v 16.7
+7-  New feature : react hooks , v 16.7
 ----------------------------------------------------------------------    
 
 

@@ -1,5 +1,5 @@
-import UserProfile from "./hoc/UserProfile";
-import CourseDetails from './hoc/CourseDetails';
+import UserProfile from "./mini/byte8-hoc/UserProfile";
+import CourseDetails from "./mini/byte8-hoc/CourseDetails";
 
 function App() {
   return (

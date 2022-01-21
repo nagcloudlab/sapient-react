@@ -24,6 +24,11 @@ function App() {
 
     const [tab, setTab] = useState(1)
 
+    const handleTabChange=(e,tabIndex)=>{
+        e.preventDefault()
+        setTab(tabIndex)
+    }
+
     const renderTabPanel = product => {
         switch (tab) {
             case 1: {
@@ -42,11 +47,6 @@ function App() {
                 )
             }
         }
-    }
-
-    const handleTabChange=(e,tabIndex)=>{
-        e.preventDefault()
-        setTab(tabIndex)
     }
 
     const renderProducts = () => {
@@ -109,7 +109,7 @@ function App() {
         </div>
     );
 
-    
+
 }
 
 export default App;

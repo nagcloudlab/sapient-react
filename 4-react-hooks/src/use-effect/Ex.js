@@ -6,13 +6,32 @@ function Ex({ title }) {
     const [resource, setResource] = useState('posts')
     const [items, setItems] = useState([])
 
+
+    // effect will extecute on every render
+    // useEffect(() => {
+    //     console.log("useffect()");
+    // })
+
+    // effect will extecute on intial render
+    // useEffect(() => {
+    //     console.log("useEffect");
+    // }, [])
+
+    // effect will extecute on dependency change
+    // useEffect(() => {
+    //     fetch("http://jsonplaceholder.typicode.com/" + resource)
+    //         .then(response => response.json())
+    //         .then(items => {
+    //             setItems(items)
+    //         })
+    // }, [resource])
+
     useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/${resource}`)
-            .then(response => response.json())
-            .then(responseItems => {
-                setItems(responseItems) // state change -> trigger-re-render
-            })
-    }, [resource])
+        console.log("didMount/Update");
+        return () => {
+            console.log("willUnmount");
+        }
+    })
 
 
     return (
@@ -29,8 +48,8 @@ function Ex({ title }) {
                 <hr />
 
                 {
-                    items.map(item => (
-                        <pre>
+                    items.map((item, idx) => (
+                        <pre key={idx}>
                             {JSON.stringify(item)}
                         </pre>
                     ))

@@ -1,6 +1,7 @@
 import {useState} from "react";
 import Navbar from "./components/Navbar";
 import Product from "./components/Product";
+import CartBadge from "./components/CartBadge";
 
 function App() {
 
@@ -22,12 +23,18 @@ function App() {
             imagePath:'images/Mobile.png'
         }
     ])
+    const [cart,setCart]=useState([])
+
+    const addToCart=item=>{
+        setCart([...cart,item])
+    }
 
     const renderProducts = () => {
         return products.map(product => {
             return (
                 <div key={product.id} className={"list-group-item"}>
-                    <Product value={product}/>
+                    <Product value={product}
+                             onBuy={item=>addToCart(item)}/>
                 </div>
             )
         })
@@ -37,6 +44,9 @@ function App() {
         <div className="">
             <Navbar title={"e-shop"}/>
             <hr/>
+            <div className={"container"}>
+               <CartBadge count={cart.length}/>
+            </div>
             <hr/>
             <div className="container">
                 {renderProducts()}

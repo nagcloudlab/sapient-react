@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import classNames from "classnames";
+import Review from "./Review";
 
 function Product({value:product}) {
 
@@ -12,6 +13,16 @@ function Product({value:product}) {
     const handleTabChange=(e,tabIndex)=>{
         e.preventDefault()
         setTab(tabIndex)
+    }
+
+    const renderReviews=()=>{
+        return reviews.map((review,idx)=>{
+            return (
+                <div key={idx}>
+                    <Review value={review}/>
+                </div>
+            )
+        })
     }
 
     const renderTabPanel = product => {
@@ -28,7 +39,7 @@ function Product({value:product}) {
             }
             case 3: {
                 return (
-                    <div>None Yet</div>
+                    <div>{renderReviews()}</div>
                 )
             }
         }

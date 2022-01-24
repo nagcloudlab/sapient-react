@@ -32,7 +32,6 @@ function ProductList({onBuy}) {
                 )
             })
     }
-
     return (
         <div>
             {renderProducts()}

@@ -1,0 +1,31 @@
+
+
+Step 1: Break The UI Into A Component Hierarchy
+
+    - TodoApp
+        - TodoInput
+        - TodoLimit
+        - TodoList
+            -TodoItem
+        - TodoFilter    
+
+Step 2: Build A Static Version in React
+
+Step 3: Identify The Minimal (but complete) Representation Of UI State
+
+       state = todos = [
+           {id,title,completed},
+           {id,title,completed},
+           {id,title,completed}
+       ] 
+
+Step 4: Identify Where Your State Should Live
+
+        todos ==> TodoApp
+
+
+Step 5: Add Inverse Data Flow
+
+
+        parent-child => props
+        child-parent => events i.e call the function given by parent with data 

@@ -6,12 +6,26 @@ import TodoFilter from "./TodoFilter";
 
 import {getTodos} from '../api/todos'
 
+
+const TODO_FILTERS = {
+    ALL: todo => true,
+    COMPLETED: todo => todo.completed,
+    ACTIVE: todo => !todo.completed
+}
+
 function TodoApp(props) {
 
     const [todos, setTodos] = useState([])
+    const [filteredTodos, setFilteredTodos] = useState([])
+    const [limit,setLimit]=useState(5)
+    const [flag,setFlag]=useState('ALL')
 
     const handleDeleteTodo = id => {
         const newTodos = todos.filter(todo => todo.id !== id)
+        setTodos(newTodos)
+    }
+    const handleClearCompleted = id => {
+        const newTodos = todos.filter(todo => !todo.completed)
         setTodos(newTodos)
     }
     const handleCompleteTodo = id => {
@@ -39,31 +53,44 @@ function TodoApp(props) {
         setTodos([newTodo, ...todos])
     }
 
+
     const loadTodos = async () => {
-        let response = await getTodos()
+        let response = await getTodos(limit)
         let todos = await response.json()
         setTodos(todos)
+        setFilteredTodos(todos)
     }
     useEffect(() => {
         loadTodos()
-    }, [])
+    }, [limit])
+
+    useEffect(()=>{
+        let result=todos.filter(TODO_FILTERS[flag]);
+        setFilteredTodos(result)
+    },[flag])
 
     return (
         <div>
             <hr/>
             <h1>todo app</h1>
             <hr/>
-            <TodoInput onSubmit={title => handleNewTodo(title)}/>
+            <TodoInput
+                onSubmit={title => handleNewTodo(title)}/>
             <hr/>
-            <TodoLimit />
+            <TodoLimit
+                onLimitChange={newLimit=>setLimit(newLimit)}
+            />
             <hr/>
-            <TodoList value={todos}
+            <TodoList value={filteredTodos}
                       onDelete={id => handleDeleteTodo(id)}
                       onComplete={id => handleCompleteTodo(id)}
                       onEdit={(id, title) => handleEditTodo(id, title)}
             />
             <hr/>
-            <TodoFilter/>
+            <TodoFilter
+                onFilter={flag=>setFlag(flag)}
+                onClearCompleted={()=>handleClearCompleted()}
+            />
             <hr/>
         </div>
     );

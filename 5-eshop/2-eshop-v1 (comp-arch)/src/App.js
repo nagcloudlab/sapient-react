@@ -10,7 +10,8 @@ function App() {
     const [cart, setCart] = useState({})
     const [isCartVisible, setCartVisible] = useState(false)
 
-    const toggleCartView = () => {
+    const toggleCartView = (e) => {
+        e.preventDefault()
         setCartVisible(!isCartVisible)
     }
 
@@ -43,8 +44,8 @@ function App() {
             <hr/>
             <ul className="nav nav-pills">
                 <li className="nav-item">
-                    <a onClick={e => toggleCartView()}
-                       className="nav-link" href="#">
+                    <a onClick={e => toggleCartView(e)}
+                       className="nav-link" href="">
                         {isCartVisible?'Products':'Cart'}
                     </a>
                 </li>

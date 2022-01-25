@@ -1,20 +1,35 @@
 import React, {useState} from 'react';
+import {useParams} from 'react-router-dom'
 
-function ContactForm({onNewContact,history}) {
-    console.log(history)
-    const [contact, setContact] = useState({
+function ContactForm({onNewContact,onEditContact, history, match, contacts}) {
+
+    // const {contactId}=match.params;
+    // -or-
+    let {contactId} = useParams();
+    contactId = Number.parseInt(contactId)
+
+    let contactData = {
         name: '',
         email: '',
         mobile: '',
         address: ''
-    })
+    }
+    if (contactId) {
+        contactData = contacts.find(c => c.id === contactId)
+    }
+
+    const [contact, setContact] = useState(contactData)
     const handleChange = e => {
         let {id, value} = e.target
         setContact({...contact, [id]: value})
     }
     const handleSubmit = e => {
         e.preventDefault()
-        onNewContact(contact)
+        if (contact.id) {
+            onEditContact(contact)
+        } else {
+            onNewContact(contact)
+        }
         setContact({
             name: '',
             email: '',
@@ -25,7 +40,7 @@ function ContactForm({onNewContact,history}) {
     }
     return (
         <div className={"card"}>
-            <div className={"card-header"}>New Contact</div>
+            <div className={"card-header"}>Contact Form - {contactId}</div>
             <div className={"card-body"}>
                 <form onSubmit={e => handleSubmit(e)}>
                     <div className={"form-group"}>

@@ -1,15 +1,16 @@
 import React from 'react';
+import {Link, Route} from "react-router-dom";
+import ContactView from "./ContactView";
 
-function ContactList({value}) {
+function ContactList({value,onDelete,mathch}) {
 
     const renderContacts=()=>{
         return value.map(contact=>{
             return (
                 <tr key={contact.id}>
-                    <td>{contact.name}</td>
-                    <td>{contact.email}</td>
-                    <td>{contact.mobile}</td>
-                    <td>{contact.address}</td>
+                    <td><Link to={`/all/view/${contact.id}`}>{contact.name}</Link></td>
+                    <td><Link to={`/edit/${contact.id}`}><i className={"fa fa-edit"}></i></Link></td>
+                    <td><Link to={""} onClick={e=>{e.preventDefault();onDelete(contact.id)}}><i className={"fa fa-trash"}></i></Link></td>
                 </tr>
             )
         })
@@ -21,13 +22,14 @@ function ContactList({value}) {
                 <tbody>
                     <tr>
                         <th>Name</th>
-                        <th>Email</th>
-                        <th>Mobile</th>
-                        <th>Address</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     {renderContacts()}
                 </tbody>
             </table>
+            <hr/>
+            <Route path={"/all/view/:contactId"} render={props=><ContactView {...props} contacts={value} />}/>
         </div>
     );
 }

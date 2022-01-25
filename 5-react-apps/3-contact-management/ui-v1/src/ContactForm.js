@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {useParams} from 'react-router-dom'
+import React, { useState } from 'react';
+import { useParams } from 'react-router-dom'
 
-function ContactForm({onNewContact,onEditContact, history, match, contacts}) {
+function ContactForm({ onNewContact, onEditContact, history, match, contacts }) {
 
     // const {contactId}=match.params;
     // -or-
-    let {contactId} = useParams();
+    let { contactId } = useParams();
     contactId = Number.parseInt(contactId)
 
     let contactData = {
@@ -20,8 +20,8 @@ function ContactForm({onNewContact,onEditContact, history, match, contacts}) {
 
     const [contact, setContact] = useState(contactData)
     const handleChange = e => {
-        let {id, value} = e.target
-        setContact({...contact, [id]: value})
+        let { id, value } = e.target
+        setContact({ ...contact, [id]: value })
     }
     const handleSubmit = e => {
         e.preventDefault()
@@ -46,24 +46,24 @@ function ContactForm({onNewContact,onEditContact, history, match, contacts}) {
                     <div className={"form-group"}>
                         <label>Name</label>
                         <input value={contact.name} id={"name"} onChange={e => handleChange(e)}
-                               className={"form-control"}/>
+                            className={"form-control"} />
                     </div>
                     <div className={"form-group"}>
                         <label>Email</label>
                         <input value={contact.email} id={"email"} onChange={e => handleChange(e)}
-                               className={"form-control"}/>
+                            className={"form-control"} />
                     </div>
                     <div className={"form-group"}>
                         <label>Mobile</label>
                         <input value={contact.mobile} id={"mobile"} onChange={e => handleChange(e)}
-                               className={"form-control"}/>
+                            className={"form-control"} />
                     </div>
                     <div className={"form-group"}>
                         <label>Address</label>
                         <textarea value={contact.address} id={"address"} onChange={e => handleChange(e)}
-                                  className={"form-control"}></textarea>
+                            className={"form-control"}></textarea>
                     </div>
-                    <br/>
+                    <br />
                     <button className={"btn btn-dark"}>Save</button>
                 </form>
             </div>

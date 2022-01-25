@@ -1,0 +1,25 @@
+
+
+
+
+design issues with react/react-native only 
+-------------------------------------------
+
+==> state , state-change & n/wing logic , all are in UI-component
+==> if same state required on mltiple components,
+    pass down the tree as props or use put in 'context'
+
+
+causes
+
+  => components are heavy-weight, i.e not re-usable
+  => unit-testing not possible if have too much n/w logic on components
+
+
+---------------------------------------------------------------------------
+
+solution:
+
+    ==> flux pattern
+
+---------------------------------------------------------------------------    

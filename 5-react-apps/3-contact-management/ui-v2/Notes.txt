@@ -1,0 +1,27 @@
+
+
+
+
+steps working with redux
+-------------------------------
+
+ step-1 : know your UI-application's state
+
+            e.g contact management
+            - contacts
+
+ step-2 : identify force/action(s) which cause state change
+
+        - ADD_CONTACT
+        - EDIT_CONTACT
+        - DELETE_CONTACT
+
+ step-3 : define reducer/pure-function to make new-state for an action
+
+          - contactsReducer(state,action) => new-state
+
+ step-4 : combine multiple reducer(s) to root-reducer
+ step-5 : create single-store with root-reducer
+
+
+

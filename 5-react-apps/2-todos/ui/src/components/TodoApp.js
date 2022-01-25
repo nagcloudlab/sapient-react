@@ -1,24 +1,27 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import TodoInput from "./TodoInput";
 import TodoLimit from "./TodoLimit";
 import TodoList from "./TodoList";
 import TodoFilter from "./TodoFilter";
 
-import {getTodos} from '../api/todos'
+import { getTodos } from '../api/todos'
+
+import { useParams } from 'react-router-dom'
 
 
 const TODO_FILTERS = {
-    ALL: todo => true,
-    COMPLETED: todo => todo.completed,
-    ACTIVE: todo => !todo.completed
+    all: todo => true,
+    completed: todo => todo.completed,
+    active: todo => !todo.completed
 }
 
 function TodoApp(props) {
 
     const [todos, setTodos] = useState([])
     const [filteredTodos, setFilteredTodos] = useState([])
-    const [limit,setLimit]=useState(5)
-    const [flag,setFlag]=useState('ALL')
+    const [limit, setLimit] = useState(5)
+
+    const { flag } = useParams()
 
     const handleDeleteTodo = id => {
         const newTodos = todos.filter(todo => todo.id !== id)
@@ -31,7 +34,7 @@ function TodoApp(props) {
     const handleCompleteTodo = id => {
         const newTodos = todos.map(todo => {
             if (todo.id === id)
-                return {...todo, completed: !todo.completed}
+                return { ...todo, completed: !todo.completed }
             return todo
         })
         setTodos(newTodos)
@@ -39,7 +42,7 @@ function TodoApp(props) {
     const handleEditTodo = (id, title) => {
         const newTodos = todos.map(todo => {
             if (todo.id === id)
-                return {...todo, title: title}
+                return { ...todo, title: title }
             return todo
         })
         setTodos(newTodos)
@@ -53,7 +56,6 @@ function TodoApp(props) {
         setTodos([newTodo, ...todos])
     }
 
-
     const loadTodos = async () => {
         let response = await getTodos(limit)
         let todos = await response.json()
@@ -64,34 +66,33 @@ function TodoApp(props) {
         loadTodos()
     }, [limit])
 
-    useEffect(()=>{
-        let result=todos.filter(TODO_FILTERS[flag]);
+    useEffect(() => {
+        let result = todos.filter(TODO_FILTERS[flag]);
         setFilteredTodos(result)
-    },[flag])
+    }, [todos, flag, limit])
 
     return (
         <div>
-            <hr/>
+            <hr />
             <h1>todo app</h1>
-            <hr/>
+            <hr />
             <TodoInput
-                onSubmit={title => handleNewTodo(title)}/>
-            <hr/>
+                onSubmit={title => handleNewTodo(title)} />
+            <hr />
             <TodoLimit
-                onLimitChange={newLimit=>setLimit(newLimit)}
+                onLimitChange={newLimit => setLimit(newLimit)}
             />
-            <hr/>
+            <hr />
             <TodoList value={filteredTodos}
-                      onDelete={id => handleDeleteTodo(id)}
-                      onComplete={id => handleCompleteTodo(id)}
-                      onEdit={(id, title) => handleEditTodo(id, title)}
+                onDelete={id => handleDeleteTodo(id)}
+                onComplete={id => handleCompleteTodo(id)}
+                onEdit={(id, title) => handleEditTodo(id, title)}
             />
-            <hr/>
+            <hr />
             <TodoFilter
-                onFilter={flag=>setFlag(flag)}
-                onClearCompleted={()=>handleClearCompleted()}
+                onClearCompleted={() => handleClearCompleted()}
             />
-            <hr/>
+            <hr />
         </div>
     );
 }

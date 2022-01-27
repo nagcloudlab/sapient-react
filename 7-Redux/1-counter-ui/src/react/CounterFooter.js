@@ -12,10 +12,10 @@ function CounterFooter({}) {
     }
     return (
         <div className={"alert alert-danger"}>
-            <div data-testid={"count"} className={"display-6"}>
-                {count}
-                <br/>
+            <div data-testid={"count"}>
                 <button onClick={e=>handleReset()} className={"btn btn-warning"}>reset</button>
+                &nbsp;
+                {count}
             </div>
         </div>
     );

@@ -1,0 +1,54 @@
+
+
+
+eshop
+-----------------------------
+
+------------------------------
+state
+------------------------------
+
+slices
+--------
+    - products
+    - reviews
+    - cart
+
+------------------------------
+action(s)
+------------------------------
+
+    1.products
+    ----------
+        - LOAD_PRODUCTS
+    2.reviews
+    ----------
+        - LOAD_REVIEWS
+        - ADD_NEW_REVIEW
+    3.cart
+    ---------
+        - BUY
+        - REMOVE_CART_ITEM
+
+
+------------------------------
+reducers(s)
+------------------------------
+
+    - productsReducer()
+    - reviewsReducer()
+    - cartReducer()
+
+
+    rootReducer=combineReducers({
+        products:productsReducer,
+        reviews:reviewsReducer,
+        cart:cartReducer
+    })
+
+
+------------------------------
+store
+------------------------------
+
+    store(rootReducer)

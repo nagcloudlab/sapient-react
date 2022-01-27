@@ -7,7 +7,9 @@ function CounterHead({title}) {
     return (
         <div className={"alert alert-dark"}>
             <div data-testid={"title"}>
-                Counter - {count}
+               <div className={"display-3"}>
+                   Counter - <span className={"badge bg-danger"}>{count}</span>
+               </div>
             </div>
         </div>
     );

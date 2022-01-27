@@ -1,0 +1,36 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Laptop",
+            "price": 250000,
+            "description": "New pro",
+            "isAvailable": true,
+            "imagePath": "images/Laptop.png"
+        },
+        {
+            "id": 2,
+            "name": "Mobile",
+            "price": 15000,
+            "description": "New model",
+            "isAvailable": true,
+            "imagePath": "images/Mobile.png"
+        },
+        {
+            "id": 3,
+            "name": "Laptop",
+            "price": 250000,
+            "description": "New pro",
+            "isAvailable": true,
+            "imagePath": "images/Laptop.png"
+        },
+        {
+            "id": 4,
+            "name": "Mobile",
+            "price": 15000,
+            "description": "New model",
+            "isAvailable": true,
+            "imagePath": "images/Mobile.png"
+        }
+    ]
+}

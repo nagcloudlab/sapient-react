@@ -29,12 +29,9 @@ function contactsReducer(state = [], action) {
     }
 }
 
-
 const rootReducer = combineReducers({
-    contacts: contactsReducer
+    contacts: contactsReducer //
 })
-
-
 
 const initialState = {
     contacts: [

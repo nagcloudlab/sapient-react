@@ -1,0 +1,52 @@
+
+-------------------------------------------------------------------------------
+UI
+
+    - data / state
+
+UI-library  always have thier own state-management solution. but thast easy approach
+
+    e.g react,angular, ..
+
+
+we need better state management solutions:
+
+  => using state-management libraries.
+
+    e.g, redux,mobx..
+
+-------------------------------------------------------------------------------
+
+principles of redux while managing state.
+
+
+#1. keep all state in one-object-tree a.k.a store
+#2. with reducer(s)(a.k.a pure-function i.e, no mutation) create new-state
+#3. with action(s) trigger state change
+
+
+--------------------------------------------------------------------------------
+
+demo-1:  counter-UI
+
+steps to work with redux,
+
+1. what is the state in UI ?
+
+    - count
+
+2. what cause/action count state change ?
+
+    - INCREMENT
+    - DECREMENT
+
+3. reducer
+
+    function reducer(state,action){
+        ... immutable
+        return state
+    }
+
+4. create 'store' with reducer, intial-state
+
+------------------------------------------------------------------------------------

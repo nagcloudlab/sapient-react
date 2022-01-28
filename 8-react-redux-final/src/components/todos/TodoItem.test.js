@@ -7,6 +7,17 @@
 import {render, fireEvent, screen} from '@testing-library/react'
 import TodoItem from "./TodoItem";
 import renderer from 'react-test-renderer';
+
+
+/*
+what we need ?
+    => Testing Framework:
+        - Jest
+    => additional libraries to test react-components with Jest
+        - Enzyme or React Testing Lib ( New )
+
+ */
+
 /*
 
     TodoItem
@@ -25,23 +36,6 @@ import renderer from 'react-test-renderer';
         - should call 'onDelete' when delete btn clicked with todo id
 
  */
-
-/*
-
-what we need ?
-
-    => Testing Framework:
-
-        - Jest
-
-    => additional libraries to test react-components with Jest
-
-        - Enzyme
-        -or-
-        - React Testing Lib ( New )
-
- */
-
 
 describe("TodoItem", () => {
 

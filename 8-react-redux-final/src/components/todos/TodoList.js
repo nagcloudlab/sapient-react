@@ -1,30 +1,24 @@
 import React, {useEffect, useState} from 'react';
 
-import * as todosApi from '../../api/todos-api'
 import TodoItem from "./TodoItem";
+import {useDispatch, useSelector} from "react-redux";
+import {deleteTodo, loadTodos} from "../../redux/actions/todos";
 
 function TodoList(props) {
 
-    const [todos, setTodos] = useState([])
+    //const [todos, setTodos] = useState([])
+    const todos = useSelector(state => state.todos)
+    const dispatch = useDispatch();
+
     const [limit, setLimit] = useState(5)
     const [error, setError] = useState({})
 
     useEffect(() => {
-        const getAllTodos = async () => {
-            try {
-                const response = await todosApi.getAllTodos(limit)
-                setTodos(response.data)
-            } catch (e) {
-                setError({
-                    message: e.message
-                })
-            }
-        }
-        getAllTodos();
+        dispatch(loadTodos(limit))
     }, [limit])
 
     const handleDelete = todoId => {
-        setTodos(todos.filter(todo => todo.id !== todoId))
+        dispatch(deleteTodo(todoId))
     }
 
     const handleLimit = n => {

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem renders correctly 1`] = `
+<tr>
+  <td
+    data-testid="todoid"
+  >
+    123
+  </td>
+  <td>
+    sample
+  </td>
+  <td>
+    not completed
+  </td>
+  <td>
+    1
+  </td>
+  <td>
+    <button
+      className="btn btn-danger"
+      data-testid="delbtn"
+      onClick={[Function]}
+    >
+      delete
+    </button>
+  </td>
+</tr>
+`;

@@ -1,28 +1,24 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
 
+import * as todosApi from '../../api/todos-api'
+import TodoItem from "./TodoItem";
 
 function TodoList(props) {
-    const [todos, setTodos] = useState([])
 
-    useEffect(async()=>{
-        // api calls
-        const response=await axios.get("https://jsonplaceholder.typicode.com/todos")
-        const todos=await response.data;
-        setTodos(todos)
-    },[])
+    const [todos, setTodos] = useState([])
+    const [limit, setLimit] = useState(5)
+
+    useEffect(async () => {
+        const response = await todosApi.getAllTodos(limit)
+        setTodos(response.data)
+    }, [limit])
+
+    const handleLimit = n => {
+        setLimit(n)
+    }
 
     const renderTodoItems = () => {
-        return todos.map(todo => {
-            return (
-                <tr key={todo.id}>
-                    <td>{todo.id}</td>
-                    <td>{todo.title}</td>
-                    <td>{todo.completed ? 'completed' : 'not completed'}</td>
-                    <td>{todo.userId}</td>
-                </tr>
-            )
-        })
+        return todos.map(todo => <TodoItem key={todo.id} value={todo}/>)
     }
     const renderTodos = () => {
         if (todos.length == 0) {
@@ -41,6 +37,17 @@ function TodoList(props) {
 
     return (
         <div>
+            <hr/>
+            {
+                [5,10, 50, 100, 200].map(n => {
+                    return (
+                        <button onClick={e => handleLimit(n)}
+                                className={`btn ${limit===n?'btn-danger':'btn-primary'}`} key={n}>
+                            {n}
+                        </button>)
+                })
+            }
+            <hr/>
             {renderTodos()}
         </div>
     );

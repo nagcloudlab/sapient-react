@@ -1,6 +1,5 @@
+import rootApi from "./root-api";
 
-import rootApi from "./root";
-
-export function getAllTodos(){
-    return rootApi.get("/todos")
+export async function getAllTodos(limit) {
+    return rootApi.get(`/todos?_limit=${limit}`)
 }

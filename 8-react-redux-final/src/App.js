@@ -1,16 +1,17 @@
 import './App.css';
-import {Link, Route} from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import TodoList from "./components/todos/TodoList";
+import Button from "./styled-components/Button";
 
 function App() {
     return (
         <div className="container">
-            <hr/>
+            <hr />
             <h1>react-redux-final</h1>
-            <hr/>
-                <Link to={"/todos"}>View Todos</Link>
-            <hr/>
-            <Route path={"/todos"} component={TodoList}/>
+            <hr />
+            <Link to={"/todos"}>View Todos</Link>
+            <hr />
+            <Route path={"/todos"} component={TodoList} />
         </div>
     );
 }

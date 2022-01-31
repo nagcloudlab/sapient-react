@@ -80,6 +80,7 @@ class TodoService_v2 {
     todos = []
     addTodo(title) {
         const todo = new Todo(title)
+        todo.id = savedTodo.id
         this.todos = this.todos.concat(todo)
     }
     editTodo(id, newTitle) {

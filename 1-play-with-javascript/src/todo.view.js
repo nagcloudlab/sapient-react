@@ -91,7 +91,7 @@ function renderTodos(todos = []) {
 }
 
 function getTodos(limit = 5) {
-    const apiUrl = `https://jsonplaceholder.typicode.com/todos?_limit=${limit}`
+    const apiUrl = `http://localhost:4000/api/todos`
     const promise = fetch(apiUrl)
     promise
         .then(response => response.json())

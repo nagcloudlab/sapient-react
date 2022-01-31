@@ -20,10 +20,10 @@ function Todo(title) {
 // - or -
 
 class Todo {
-    static nextId = 0;
+    // static nextId = 0;
     constructor(title) {
-        Todo.nextId++
-        this.id = Todo.nextId
+        // Todo.nextId++
+        // this.id = Todo.nextId
         this.title = title
         this.completed = false
     }
